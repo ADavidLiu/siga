@@ -1,0 +1,130 @@
+html,
+body {
+    overflow-x: hidden;
+    font-size: 12px;
+    @include atSmall {
+        font-size: 14px;
+    }
+    @include atMedium {
+        font-size: 15px;
+    }
+    @include atLarge {
+        font-size: 16px;
+    }
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    min-height: 100vh;
+}
+
+footer {
+    margin: auto 0 0 0;
+}
+
+aside {
+    & > * + * .headline {
+        margin-top: 2.5rem;
+        padding-top: 2.5rem;
+        border-top: 1px solid $color-secondary;
+        @include atMedium {
+            margin-top: 1.875rem;
+            padding-top: 1.875rem;
+        }
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+ul,
+ol,
+span {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    @extend .heading-primary;
+}
+
+h2 {
+    @extend .heading-secondary;
+}
+
+h3 {
+    @extend .heading-tertiary;
+}
+
+p,
+li {
+    @extend .paragraph;
+}
+
+a {
+    transition: all .25s;
+    @include linkStates($color-primary, none);
+
+    &:hover {
+        color: $color-primary-drk;
+    }
+
+    &.u-color-white {
+        @include linkStates($color-white, none);
+
+        &:hover {
+            color: $color-primary-drk;
+        }
+    }
+
+    &.u-color-secondary {
+        @include linkStates($color-secondary, none);
+
+        &:hover {
+            color: $color-primary-drk;
+        }
+    }
+    
+    &.u-color-gray-drk {
+        @include linkStates($color-gray-drk, none);
+
+        &:hover {
+            color: $color-primary-drk;
+        }
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+ul,
+ol {
+    list-style: none;
+    padding-left: 0;
+}
+
+input,
+button,
+select,
+textarea {
+    border: none;
+
+    &:focus {
+        outline: none !important;
+    }
+}
+
+::selection {
+    background-color: $color-primary-drk;
+    color: $color-white;
+}

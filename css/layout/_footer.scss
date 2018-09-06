@@ -1,0 +1,8 @@
+.footer {
+    padding: 1.667rem 0;
+    background-color: $color-secondary;
+    text-align: center;
+    @include atMedium {
+        padding: 1.25rem 0;
+    }
+}

@@ -1,0 +1,155 @@
+.course-card-notification {
+    .course-card-wrapper {
+        &:nth-child(4n+3),
+        &:nth-child(4n+3) + * {
+            @include atMedium {
+                margin-top: 6.667rem;
+            }
+            @include atLarge {
+                margin-top: 5.5rem;
+            }
+            @include atExtralarge {
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+.course-card-wrapper {
+    & + & {
+        margin-top: 2rem;
+        @include atMedium {
+            margin-top: 0;
+        }
+    }
+
+    &:nth-child(4n+3),
+    &:nth-child(4n+3) + * {
+        @include atMedium {
+            margin-top: 30px;
+        }
+        @include atExtralarge {
+            margin-top: 0;
+        }
+    }
+}
+
+.course-card {
+    box-shadow: $shadow;
+    backface-visibility: hidden;
+    transition: all .25s;
+    position: relative;
+    @include atMedium {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+    }
+
+    &__main {
+        display: block;
+        border-bottom-width: 3px;
+        border-bottom-style: solid;
+        flex: 1;
+        @include atMedium {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: flex-start;
+        }
+    }
+
+    &__img {
+        height: 7rem;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        @include atMedium {
+            height: 5.25rem;
+        }
+    }
+
+    &__content {
+        padding: 2.5rem 1.667rem 1.667rem 1.667rem;
+        background-color: $color-white;
+        position: relative;
+        @include atMedium {
+            padding: 1.875rem 1.25rem 1.25rem 1.25rem;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: space-between;
+            flex: 1;
+        }
+    }
+
+    &__actions {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateY(-50%);
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0 1.667rem;
+        @include atMedium {
+            padding: 0 1.25rem;
+        }
+
+        &-item {
+            & + & {
+                margin-left: 10px;
+            }
+        }
+    }
+
+    &__favorite {
+        border-radius: 50%;
+        height: 2.5rem;
+        width: 2.5rem;
+        min-height: 2.5rem;
+        min-width: 2.5rem;
+        box-shadow: $shadow;
+        background-color: $color-primary;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        @include atMedium {
+            height: 1.875rem;
+            width: 1.875rem;
+            min-height: 1.875rem;
+            min-width: 1.875rem;
+        }
+
+        i {
+            color: $color-white;
+        }
+    }
+
+    &__info {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        &-item {
+            text-align: center;
+        }
+    }
+
+    &__notification {
+        @include atMedium {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            transform: translateY(100%);
+        }
+    }
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}

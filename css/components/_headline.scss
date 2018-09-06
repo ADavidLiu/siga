@@ -1,0 +1,52 @@
+.headline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $color-secondary;
+    margin-bottom: 2.5rem;
+    @include atMedium {
+        margin-bottom: 1.875rem;
+    }
+
+    &__icons {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding-left: 2rem;
+
+        &-item {
+            i {
+                font-size: 1.667rem;
+                @include atMedium {
+                    font-size: 1.25rem;
+                }
+            }
+
+            & + & {
+                margin-left: 1.25rem;
+                @include atMedium {
+                    margin-left: .9375rem;
+                }
+            }
+
+            &--med {
+                i {
+                    font-size: 1.333rem;
+                    @include atMedium {
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
+
+    &--no-border {
+        padding-bottom: 0;
+        border-bottom: 0;
+        margin-bottom: 1.667rem;
+        @include atMedium {
+            margin-bottom: 1.25rem;
+        }
+    }
+}

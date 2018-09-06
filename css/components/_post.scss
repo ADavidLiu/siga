@@ -1,0 +1,119 @@
+.post {
+    border-top-width: 3px;
+    border-top-style: solid;
+    padding: 1.667rem;
+    padding-bottom: 2.9167rem;
+    box-shadow: $shadow;
+    background-color: $color-white;
+    display: block;
+    transition: all .25s;
+    backface-visibility: hidden;
+    height: 100%;
+    @include atMedium {
+        padding: 1.25rem;
+        padding-bottom: 2.1875rem;
+    }
+
+    &__content {
+        @include atExtralarge {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+    }
+
+    &__main {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        @include atMedium {
+            flex: 1;
+        }
+
+        &-icon {
+            font-size: 1.667rem;
+            margin-right: 1.667rem;
+            @include atMedium {
+                font-size: 1.25rem;
+                margin-right: 1.25rem;
+            }
+
+            &--big {
+                font-size: 2.5rem;
+                @include atMedium {
+                    font-size: 1.875rem;
+                }
+            }
+        }
+
+        &-text {
+            & > * + * {
+                margin-top: 1rem;
+            }
+        }
+    }
+
+    &__sub {
+        margin-top: 2rem;
+        padding-left: 3.667rem;
+        @include atSmall {
+            padding-left: 2.875rem;
+        }
+        @include atMedium {
+            padding-left: 2.75rem;
+        }
+        @include atExtralarge {
+            margin-top: 0;
+            width: 35%;
+            text-align: right;
+        }
+
+        &-inner {
+            text-align: center;
+            display: inline-block;
+        }
+    }
+
+    &__notice {
+        padding: 8px .875rem;
+        border-radius: 5rem;
+        background-color: $color-tarea;
+        text-align: center;
+    }
+
+    &:hover {
+        transform: scale(1.05);
+    }
+
+    &--homework {
+        border-top-color: $color-tarea;
+
+        .post__main-icon {
+            color: $color-tarea;
+        }
+    }
+
+    &--zip {
+        border-top-color: $color-zip;
+
+        .post__main-icon {
+            color: $color-zip;
+        }
+    }
+
+    &--pdf {
+        border-top-color: $color-pdf;
+
+        .post__main-icon {
+            color: $color-pdf;
+        }
+    }
+
+    &--url {
+        border-top-color: $color-url;
+
+        .post__main-icon {
+            color: $color-url;
+        }
+    }
+}

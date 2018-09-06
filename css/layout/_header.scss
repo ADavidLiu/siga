@@ -1,0 +1,261 @@
+.header {
+    background-color: $color-primary;
+
+    &__content {
+        @include atMedium {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+    
+    &__main {
+        padding: 1.5625rem 0;
+        border-bottom: 1px solid $color-primary;
+        position: relative;
+        z-index: 3;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: all .5s;
+        background-color: $color-primary;
+        @include atMedium {
+            background: transparent;
+            border-bottom: 0;
+            display: block;
+            padding: 0;
+        }
+    }
+
+    &__logo {
+        display: block;
+    }
+
+    &__btn {
+        cursor: pointer;
+        padding: 0;
+        margin: 0;
+        background: transparent;
+        width: 30px;
+        height: 20px;
+        position: relative;
+        @include atMedium {
+            display: none;
+        }
+
+        &-line {
+            height: 3px;
+            width: 2.5rem;
+            display: block;
+            border-radius: 2rem;
+            background-color: $color-white;
+            transition: all .25s;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            backface-visibility: hidden;
+
+            &:first-child {
+                top: 0;
+                transform: none;
+            }
+
+            &:last-child {
+                bottom: 0;
+                top: auto;
+                transform: none;
+            }
+        }
+    }
+
+    &__nav {
+        background-color: $color-primary;
+        position: fixed;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 6rem 0 3.333rem 0;
+        transition: all .5s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        pointer-events: none;
+        opacity: 0;
+        transition: all .5s;
+        transform: translateY(-100%);
+        @include atMedium {
+            position: static;
+            width: auto;
+            height: auto;
+            background: transparent;
+            opacity: 1;
+            transform: none;
+            padding: 0;
+            pointer-events: all;
+            flex: 1;
+            flex-direction: row;
+            justify-content: flex-end;
+        }
+    }
+
+    &__menu {
+        width: calc(100% - 60px);
+        margin: 0 auto;
+        text-align: center;
+        @include atSmall {
+            max-width: 480px;
+            width: auto;
+        }
+        @include atMedium {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            max-width: 100%;
+            margin: 0 0 0 auto;
+        }
+
+        &-link {
+            display: block;
+            padding: 1.5625rem .9375rem;
+            @include linkStates($color-white, none);
+
+            &:hover,
+            &--active {
+                background-color: $color-white;
+                @include linkStates($color-primary, none);
+            }
+        }
+    }
+
+    &__profile {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-right: .5rem;
+        @include atMedium {
+            margin-right: 0;
+            padding-left: 1.875rem;
+            margin-left: .9375rem;
+            border-left: 1px solid $color-white;
+        }
+
+        &-img {
+            height: 2.9167rem;
+            width: 2.9167rem;
+            min-height: 2.9167rem;
+            min-width: 2.9167rem;
+            border-radius: 50%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            margin-right: 10px;
+            @include atMedium {
+                margin-right: 0;
+                margin-left: 10px;
+                height: 2.1875rem;
+                width: 2.1875rem;
+                min-height: 2.1875rem;
+                min-width: 2.1875rem;
+                order: 2;
+            }
+        }
+
+        &-copy {
+            @include atMedium {
+                order: 1;
+                text-align: right;
+                white-space: nowrap;
+                line-height: 1;
+            }
+
+            * {
+                line-height: 1;
+            }
+
+            a {
+                &:hover {
+                    color: $color-secondary !important;
+                }
+            }
+        }
+    }
+
+    &--inner {
+        .header {
+            &__content {
+                @include atMedium {
+                    display: block;
+                }
+                @include atLarge {
+                    display: flex;
+                }
+            }
+
+            &__main {
+                @include atMedium {
+                    padding: 1.5625rem 0;
+                    text-align: center;
+                }
+                @include atLarge {
+                    padding: 0;
+                }
+            }
+
+            &__logo {
+                @include atMedium {
+                    display: inline-block;
+                }
+            }
+
+            &__menu {
+                @include atMedium {
+                    justify-content: space-between;
+                    flex: 1;
+                }
+                @include atLarge {
+                    justify-content: flex-end;
+                    flex: initial;
+                }
+            }
+        }
+    }
+
+    &--active {
+        .header {
+            &__main {
+                border-color: $color-white;
+            }
+
+            &__btn-line {
+                &:first-child {
+                    top: 50%;
+                    transform: translateY(-50%) rotate(45deg);
+                }
+
+                &:nth-child(2) {
+                    opacity: 0;
+                }
+
+                &:last-child {
+                    top: 50%;
+                    bottom: auto;
+                    transform: translateY(-50%) rotate(-45deg);
+                }
+            }
+
+            &__nav {
+                transform: none;
+                opacity: 1;
+                pointer-events: all;
+                @include atMedium {
+                    padding: 0;
+                    display: block;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,196 @@
+.calendar {
+    &__switch {
+        margin-bottom: 1.667rem;
+        @include atMedium {
+            margin-bottom: 1.25rem;
+        }
+
+        input {
+            display: none;
+
+            &:checked {
+                & + label {
+                    background-color: $color-primary;
+                    color: $color-white;
+                }
+            }
+        }
+
+        label {
+            cursor: pointer;
+            transition: all .25s;
+            padding: 5px 1.25rem;
+            border-radius: 5rem;
+            color: $color-secondary;
+            @extend .paragraph;
+            @extend .paragraph--small;
+            @include atMedium {
+                padding: 5px .9375rem;
+            }
+        }
+    }
+
+    &__widget {
+        box-shadow: $shadow;
+        padding: 1.125rem;
+        margin-bottom: 1.5rem;
+        background-color: $color-white;
+        @include atMedium {
+            margin-bottom: 1.125rem;
+        }
+
+        &-header {
+            margin-bottom: 1.667rem;
+            padding: 0 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            @include atSmall {
+                margin-bottom: 1.25rem;
+                padding: 0 .75rem;
+            }
+        }
+
+        &-controls {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        &-arrow {
+            height: 1.667rem;
+            width: 1.667rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $color-primary;
+            cursor: pointer;
+            backface-visibility: hidden;
+            @include atSmall {
+                height: 1.25rem;
+                width: 1.25rem;
+            }
+
+            &-icon {
+                width: 30%;
+            }
+
+            & + & {
+                margin-left: 10px;
+            }
+
+            &--next {
+                .calendar__widget-arrow {
+                    &-icon {
+                        transform: scaleX(-1) translateX(-1px);
+                    }
+                }
+            }
+        }
+
+        &-labels {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: .667rem;
+            @include atMedium {
+                margin-bottom: .5rem;
+            }
+
+            p {
+                width: 14%;
+                text-align: center;
+            }
+        }
+
+        &-dates {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+
+            &-item {
+                margin-top: .667rem;
+                width: 14.28%;
+                text-align: center;
+                font-weight: 300;
+                @extend .paragraph--small;
+                @include atSmall {
+                    margin-top: .5rem;
+                }
+
+                &--dot {
+                    position: relative;
+                    color: $color-white;
+                    @include linkStates($color-white, none);
+
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        z-index: -1;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        border-radius: 50%;
+                        height: 2rem;
+                        width: 2rem;
+                        border-radius: 50%;
+                        @include atMedium {
+                            height: 1.5rem;
+                            width: 1.5rem;
+                        }
+                    }
+
+                    &-primary {
+                        &:before {
+                            background-color: $color-primary;
+                        }
+                    }
+
+                    &-1 {
+                        &:before {
+                            background-color: $color-curso-1;
+                        }
+                    }
+                    
+                    &-2 {
+                        &:before {
+                            background-color: $color-curso-2;
+                        }
+                    }
+                    
+                    &-3 {
+                        &:before {
+                            background-color: $color-curso-3;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__event {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        &-dot {
+            display: block;
+            height: 6px;
+            width: 6px;
+            min-height: 6px;
+            min-width: 6px;
+            border-radius: 50%;
+            margin-right: 5px;
+            transform: translateY(6px);
+        }
+
+        & + & {
+            margin-top: 1.25rem;
+            @include atMedium {
+                margin-top: .9375rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,206 @@
+// Font family
+.u-font {
+    &-titles {
+        font-family: $font-titles;
+    }
+
+    &-main {
+        font-family: $font-main;
+    }
+}
+
+
+// Font weight
+.u-weight {
+    &-lgt {
+        font-weight: 300;
+    }
+
+    &-reg {
+        font-weight: 400;
+    }
+
+    &-med {
+        font-weight: 500;
+    }
+
+    &-bld {
+        font-weight: 700;
+    }
+}
+
+
+// Color
+.u-color {
+    &-white {
+        color: $color-white;
+    }
+
+    &-primary {
+        color: $color-white;
+    }
+
+    &-secondary {
+        color: $color-secondary;
+    }
+
+    &-gray {
+        color: $color-gray;
+
+        &-drk {
+            color: $color-gray-drk;
+        }
+    }
+
+    &-tarea {
+        color: $color-tarea;
+    }
+
+    &-zip {
+        color: $color-zip;
+    }
+
+    &-pdf {
+        color: $color-pdf;
+    }
+
+    &-url {
+        color: $color-url;
+    }
+}
+
+
+// Margin
+.u-margin {
+    &-bottom {
+        &-null {
+            margin-bottom: 0;
+        }
+
+        &-smallest {
+            margin-bottom: 5px;
+        }
+
+        &-smaller {
+            margin-bottom: 10px;
+        }
+
+        &-small {
+            margin-bottom: 1.25rem;
+
+            &-2 {
+                margin-bottom: 1.5625rem;
+            }
+        }
+
+        &-med {
+            margin-bottom: 1.875rem;
+
+            &-2 {
+                margin-bottom: 2.1875rem;
+            }
+        }
+
+        &-big {
+            margin-bottom: 2.5rem;
+        }
+
+        &-huge {
+            margin-bottom: 3.125rem;
+
+            &-3 {
+                margin-bottom: 7.083rem;
+                @include atMedium {
+                    margin-bottom: 5.3125rem;
+                }
+            }
+        }
+    }
+
+    &-right {
+        &-smallest {
+            margin-right: 10px;
+
+            &-2 {
+                margin-right: 5px;
+            }
+        }
+    }
+
+    &-md {
+        @include atMedium {
+            &-bottom {
+                &-null {
+                    margin-bottom: 0;
+                }
+
+                &-small {
+                    margin-bottom: .9375rem;
+                }
+
+                &-huge {
+                    margin-bottom: 5rem;
+                }
+            }
+        }
+    }
+    
+    &-xl {
+        @include atExtralarge {
+            &-bottom {
+                &-null {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+
+// Padding
+.u-padding {
+    &-top {
+        &-huge {
+            padding-top: 3.125rem;
+        }
+    }
+
+    &-bottom {
+        &-huge {
+            padding-bottom: 3.125rem;
+
+            &-2 {
+                padding-bottom: 4.6875rem;
+            }
+        }
+    }
+}
+
+
+// Alignment
+.u-align {
+    &-md {
+        @include atMedium {
+            &-inline {
+                &-left {
+                    text-align: left;
+                }
+
+                &-right {
+                    text-align: right;
+                }
+            }
+        }
+    }
+}
+
+
+// Hover
+.u-hover {
+    &-white {
+        &:hover {
+            color: $color-white;
+            @include linkStates($color-white, none);
+        }
+    }
+}

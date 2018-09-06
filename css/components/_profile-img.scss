@@ -1,0 +1,35 @@
+.profile-img {
+    border-radius: 50%;
+    height: 2.5rem;
+    width: 2.5rem;
+    min-height: 2.5rem;
+    min-width: 2.5rem;
+    box-shadow: $shadow;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: block;
+    @include atMedium {
+        height: 1.875rem;
+        width: 1.875rem;
+        min-height: 1.875rem;
+        min-width: 1.875rem;
+    }
+
+    &--no-shadow {
+        box-shadow: none;
+    }
+
+    &--small {
+        height: 1.667rem;
+        width: 1.667rem;
+        min-height: 1.667rem;
+        min-width: 1.667rem;
+        @include atMedium {
+            height: 1.25rem;
+            width: 1.25rem;
+            min-height: 1.25rem;
+            min-width: 1.25rem;
+        }
+    }
+}

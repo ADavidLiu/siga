@@ -1,0 +1,104 @@
+.activity {
+    &__item {
+        @include atMedium {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        &-copy {
+            width: 100%;
+            @include atMedium {
+                width: 80%;
+            }
+        }
+
+        &-info {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        &-actions {
+            transition: all .25s;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-top: 1.333rem;
+            @include atMedium {
+                margin-top: 0;
+                justify-content: flex-end;
+                width: 20%;
+                opacity: 0;
+                transform: translateY(-1rem);
+            }
+        }
+
+        &-action {
+            height: 2.5rem;
+            width: 2.5rem;
+            min-height: 2.5rem;
+            min-width: 2.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: $shadow;
+            cursor: pointer;
+            transition: all .25s;
+            @include atMedium {
+                height: 1.875rem;
+                width: 1.875rem;
+                min-height: 1.875rem;
+                min-width: 1.875rem;
+            }
+
+            i {
+                font-size: 1rem;
+                color: $color-white;
+                @include atMedium {
+                    font-size: .75rem;
+                }
+            }
+
+            & + & {
+                margin-left: .9375rem;
+            }
+
+            &--success {
+                background-color: $color-success;
+
+                &:hover {
+                    background-color: darken($color-success, 10%);
+                }
+            }
+            
+            &--error {
+                background-color: $color-primary;
+
+                &:hover {
+                    background-color: darken($color-primary, 10%);
+                }
+            }
+        }
+
+        &:hover {
+            .activity {
+                &__item-actions {
+                    @include atMedium {
+                        transform: none;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        & + & {
+            margin-top: 2.5rem;
+            @include atMedium {
+                margin-top: 1.875rem;
+            }
+        }
+    }
+}

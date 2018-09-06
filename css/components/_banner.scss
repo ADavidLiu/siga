@@ -1,0 +1,46 @@
+.banner {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 24.167rem;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    @include atMedium {
+        min-height: 18.125rem;
+    }
+
+    &__content {
+        position: relative;
+        padding: 2.5rem 0;
+        flex: 1;
+        @include atMedium {
+            padding: 1.875rem 0;
+        }
+
+        &-inner {
+            @include atLarge {
+                max-width: 42vw;
+            }
+        }
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba($color-black, .5);
+            clip-path: polygon(0% 0%, 100% 0%, 80% 100%, 0% 100%);
+            @include atMedium {
+                width: 55%;
+            }
+            @include atLarge {
+                width: 80%;
+                max-width: 42vw;
+            }
+        }
+    }
+}

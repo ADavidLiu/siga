@@ -1,0 +1,33 @@
+// Colors
+$color-primary: #AD2F2F;
+$color-primary-drk: #992929;
+$color-secondary: #1A212D;
+
+$color-curso-1: #2FAD84;
+$color-curso-2: #2F3DAD;
+$color-curso-3: #BB29AE;
+
+$color-success: #2FAD35;
+
+$color-tarea: #03A9F4;
+$color-zip: #FED859;
+$color-url: #999999;
+$color-pdf: #F44336;
+
+$color-gray: #BABABA;
+$color-gray-lgt: #F9F9F9;
+$color-gray-drk: #8E8E8E;
+
+$color-white: #ffffff;
+$color-black: #000000;
+
+
+// Typography
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,500,700|Rubik:300,300i,400,400i');
+
+$font-titles: "Roboto", "Helvetica Neue", "Arial", sans-serif;
+$font-main: "Rubik", "Helvetica Neue", "Arial", sans-serif;
+
+
+// Decoration
+$shadow: 0 2px 5px 0 rgba($color-black, .2);

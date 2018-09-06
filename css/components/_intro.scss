@@ -1,0 +1,81 @@
+.intro {
+    background-color: $color-secondary;
+    padding: 1.667rem 0;
+    @include atMedium {
+        padding: 1.25rem 0;
+    }
+
+    &__profile {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        &-imgs {
+            margin-right: 1.25rem;
+            @include atMedium {
+                margin-right: .9375rem;
+            }
+
+            &--multiple {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+
+                .intro__profile-img {
+                    box-shadow: $shadow;
+
+                    &:not(:last-child) {
+                        margin-right: -2.5rem;
+                        @include atMedium {
+                            margin-right: -1.875rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        &-img {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 4.167rem;
+            width: 4.167rem;
+            min-height: 4.167rem;
+            min-width: 4.167rem;
+            border-radius: 50%;
+            @include atMedium {
+                height: 3.125rem;
+                width: 3.125rem;
+                min-height: 3.125rem;
+                min-width: 3.125rem;
+            }
+        }
+
+        &-name {
+            margin-right: 1.25rem;
+            @include atMedium {
+                margin-right: .9375rem;
+            }
+        }
+    }
+
+    &__cta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 1.5rem;
+        @include atMedium {
+            margin-top: 0;
+            justify-content: flex-end;
+        }
+
+        &-copy {
+            margin-right: 1.5625rem;
+        }
+    }
+
+    &--inner {
+        background-color: rgba($color-white, .9);
+        margin: auto 0 0 0;
+    }
+}

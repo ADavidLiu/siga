@@ -1,0 +1,60 @@
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-primary;
+    border-radius: 10rem;
+    padding: 10px 1.25rem;
+    line-height: 1;
+    color: $color-white;
+    transition: all .25s;
+    @include linkStates($color-white, none);
+    @extend .paragraph;
+    @include atMedium {
+        padding: 10px .9375rem;
+    }
+
+    &:hover {
+        background-color: $color-white;
+        color: $color-primary;
+    }
+
+    &--full {
+        width: 100%;
+    }
+
+    &--small {
+        padding: 7px 1.25rem;
+        @extend .paragraph--small;
+    }
+
+    &--alt {
+        &:hover {
+            background-color: $color-secondary;
+            color: $color-white;
+        }
+    }
+
+    &--alt-border {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid $color-primary;
+
+        &:hover {
+            background: transparent;
+            color: $color-primary;
+        }
+    }
+
+    &--white {
+        background-color: $color-white;
+        color: $color-primary;
+        @include linkStates($color-primary, none);
+
+        &:hover {
+            background-color: $color-secondary;
+            color: $color-white;
+        }
+    }
+}

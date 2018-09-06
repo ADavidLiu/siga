@@ -1,0 +1,18 @@
+.scroll-up {
+    font-size: 2.083rem;
+    color: $color-primary;
+    cursor: pointer;
+    position: fixed;
+    z-index: 1;
+    bottom: 3.125rem;
+    right: 30px;
+    transition: all .25s;
+    @include atMedium {
+        right: 3.125rem;
+        font-size: 1.5625rem;
+    }
+
+    &:hover {
+        color: darken($color-primary, 10%);
+    }
+}

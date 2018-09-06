@@ -1,0 +1,30 @@
+.announcement {
+    &__item {
+        &-info {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        & + & {
+            margin-top: 1.25rem;
+            @include atMedium {
+                margin-top: .9375rem;
+            }
+        }
+
+        &--accent {
+            border-top: 3px solid $color-primary;
+            background-color: $color-gray-lgt;
+            padding: 1rem 1.25rem;
+            @include atMedium {
+                padding: .75rem .9375rem;
+            }
+
+            &-inner {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+    }
+}
