@@ -828,8 +828,7 @@ li, .btn, .calendar__switch label, .course__nav-link, .course__search input {
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
   padding: 1.125rem;
-  margin-bottom: 1.5rem;
-  background-color: #ffffff; }
+  margin-bottom: 1.5rem; }
   @media screen and (min-width: 768px) {
     .calendar__widget {
       margin-bottom: 1.125rem; } }
